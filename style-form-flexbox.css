@@ -1,0 +1,188 @@
+html { 
+-webkit-text-size-adjust: 100%; 
+background-color: white;
+box-sizing: border-box;
+  }  
+
+*, *:before, *:after {box-sizing: inherit; }
+
+* {margin: 0; padding: 0; } 
+
+body { 
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	padding: 40px 30px;
+	max-width: 500px;
+	margin: 5% auto;
+}
+
+
+section, article, nav, aside, header, footer, main { display: block;  }
+
+
+
+h1, .section__heading 
+ {
+	font-weight: normal;
+	
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 8%;
+}
+
+.form__container {
+
+	font-size: 1.50em;
+	font-family: 'Tajawal', sans-serif;
+}
+
+.section__container {  
+	display: flex;
+	flex-flow: wrap column;
+	margin-bottom: 8%;
+}
+
+.section__heading  {
+
+	margin-bottom: 50px;
+	margin-top: 30px;
+
+}
+
+label {
+	padding-bottom: 1%;
+}
+
+.input__field {
+	font-size: inherit; /*important one*/
+	border: 1px solid black;
+	padding: 3px;
+	margin-bottom: 8%;
+}
+
+
+.input__field:focus {
+	border: 1px solid #559DBB;
+	outline: none;
+	
+}
+
+input#DOB.input__field {
+	
+	font-size: 25px;
+}
+
+#radio__question--U-S-Citizen {
+	margin-bottom: 10px;
+}
+
+.radio {
+	margin-right: 20px;
+	
+}
+
+.radio:nth-of-type(2) {
+	
+	margin-left: 20px;
+}
+
+
+
+hr {
+	border: 1px solid gray;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	
+}
+
+
+
+input[type="email"] {
+	margin-bottom: 0px;
+}
+
+
+.small-font {           /*helpful info text*/
+	font-size: 18px;
+}
+
+.input__explanation-message {
+	padding-top: 8px;
+	margin-bottom: 10%;
+}
+
+/*the following places the $ sign background in the income and rent form control*/
+#annual-income, #monthly-rent {
+	background-image: url("images/dollar-sign-asset.png"); 
+	background-repeat: no-repeat;
+	background-position: 5px 3px;
+	background-size: 15px 27.95px;
+	padding-left: 23px;
+}
+
+input[type="submit"] {
+	
+	padding: 10px 15px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+	align-self: center;  /*flexbox property so the button doesn't do its default stretch*/
+	font-size: 16px;
+}
+
+
+/*start of media queries*/
+
+
+@media screen and (min-width: 650px) { /*adds a clean border, similar to what fieldset would provide*/
+	
+	body {
+		
+		border: 1px solid gray;
+		border-radius: 15px;
+	}
+}
+
+
+
+@media screen and (max-width: 330px) {
+	
+	body {
+		min-width: 138px;
+		padding-right: calc(4px + (30 - 4) * (100vw - 200px) / (330 - 200));
+		padding-left: calc(4px + (30 - 4) * (100vw - 200px) / (330 - 200));
+	}
+	
+	h1 {      font-weight: bold;      padding: 0 5px;    }
+	
+	h2 {
+		font-size: inherit;
+	}
+	
+	.form__container, input#DOB.input__field, h1 {
+		font-size: 20px;
+	}
+	
+	label:not(#DOB-label) {
+		text-align: center;
+	}
+	
+	.input__field {
+		margin-bottom: 20%;
+	}
+	
+	
+	input[type="submit"] {
+		width: 90%; 
+		/*  "font-size: calc(55% + 1vw);" for some reason did not work in the latest version of IE. Text came out extremly small. People suggested using em instead of percentage, which worked*/
+		font-size: calc(.54em + 1vw);
+		padding: 10px 0px;
+	}
+}
+

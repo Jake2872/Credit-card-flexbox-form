@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="flexbox form practice">
+ <meta name="author" content="Jacob Kupperman">
+ <meta name="keywords" content="flexbox, css, html, form, design">
+ <link href="style-form-flexbox.css" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet"> 
+	
+	<title>Flexbox Form</title>
+	
+	<!--[if lt IE 9]>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> <![endif]-->
+
+</head>
+
+<body>
+	
+	<header>
+	<h1>Credit Card Application</h1>
+		</header>
+	
+	<main>
+	
+	<form class="form__container" action="nonexistent.php" method="post">
+	
+
+		<!--start of personal information section-->
+		<section class="section__container">
+			
+			<h2 class="section__heading">Personal Information</h2>
+			
+		<label for="first-name">First Name</label>
+			<input type="text" name="first-name" class="input__field" id="first-name" required>
+		
+			<label for="MI">Middle Initial</label>
+			<input type="text" name="MI" class="input__field" id="MI">
+			
+			 <label for="last-name">Last Name</label><input type="text" required name="last-name" class="input__field" id="last-name">
+			
+			 <label for="DOB" id="DOB-label">Date of Birth</label><input type="date" name="date-of-birdth" required class="input__field" id="DOB" >
+			
+			 <label for="social-security">Social Security Number</label><input type="tel" name="social-security" required class="input__field" id="social-security" minlength="9" maxlength="9" autocomplete="off"  >
+			<!--it's not a phone number, but it's the only way I know how to bring up the number's keyboard in mobile. I turned off autocomplete to avoid telephone number suggestions-->
+		
+			<p>Are you a U.S. citizen?</p>
+			
+			<div> <!--the div's purpose is to be the direct child/flex item so the radio does not-->
+				<input class="radio" type="radio" name="citizen" id="citizen" value="yes" required><label for="citizen">Yes</label><input type="radio" class="radio" name="citizen" id="non-citizen" value="no"><label for="non-citizen">No</label>	
+			</div>
+		
+		</section>
+		
+		<!--start of contact section-->
+
+<hr />
+
+<section class="section__container">
+	
+	<h2 class="section__heading">Contact Information</h2>
+	
+	 <label for="residential-address">Residential Address</label><input type="text" name="residential-address" class="input__field" id="residential-address" required>
+	
+	 <label for="suite-apt">Suite&sol;Apt <span class="small-font">&lpar;If&nbsp;applicable&rpar;</span></label><input type="text" name="suite-apt" class="input__field" id="suite-apt" required>
+	
+	 <label for="address--city">City</label><input type="text" name="address--city" class="input__field" id="address--city" required>
+	
+	 <label>State</label> <!--does not actually link to input-->
+	  <input list="contact__address-state-search" class="input__field" > 
+       
+     <datalist id="contact__address-state-search">
+         
+        
+        <option value="AL - Alabama"> AL &dash; Alabama </option>
+        <option value="AK - Alaska"> AK &dash; Alaska </option>
+        <option value="AZ - Arizona"> AZ &dash; Arizona </option>
+        <option value="AR - Arkansas"> AR &dash; Arkansas </option>
+        <option value="CA - California"> CA &dash; California </option>
+        <option value="CO- Colorado"> CO &dash; Colorado </option>
+        <option value="CT - Connecticut"> CT &dash; Connecticut </option>
+        <option value="DE - Delaware"> DE &dash; Delaware </option>
+        <option value="FL - Florida"> FL &dash; Florida </option>
+        <option value="GA - Georgia"> GA &dash; Georgia </option>
+        <option value="HI - Hawaii"> HI &dash; Hawaii </option>
+        <option value="ID - Idaho"> ID &dash; Idaho </option>
+        <option value="IL - Illinois"> IL &dash; Illinois </option>
+        <option value="IN - Indiana"> IN &dash; Indiana </option>
+        <option value="IA - Iowa"> IA &dash; Iowa </option>
+        <option value="KS - Kansas"> KS &dash; Kansas </option>
+        <option value="KY - Kentucky"> KY &dash; Kentucky </option>
+        <option value="LA - Louisiana"> LA &dash; Louisiana </option>
+        <option value="ME - Maine"> ME &dash; Maine </option>
+        <option value="MD - Maryland"> MD &dash; Maryland </option>
+        <option value="MA - Massachusetts"> MA &dash; Massachusetts </option>
+        <option value="MI - Michigan"> MI &dash; Michigan </option>
+        <option value="MN - Minnesota"> MN &dash; Minnesota </option>
+        <option value="MS - Mississippi"> MS &dash; Mississippi </option>
+        <option value="MO - Misouri"> MO &dash; Misouri </option>
+        <option value="MT - Montana"> MT &dash; Montana </option>
+        <option value="NE - Nebraska"> NE &dash; Nebraska </option>
+        <option value="NV - Nevada"> NV &dash; Nevada </option>
+        <option value="NH - New Hampshire"> NH &dash; New Hampshire </option>
+        <option value="NJ - New Jersey"> NJ &dash; New Jersey </option>
+        <option value="NM - New Mexico"> NM &dash; New Mexico </option>
+        <option value="NY - New York"> NY &dash; New York </option>
+        <option value="NC - North Carolina"> NC &dash; North Carolina </option>
+        <option value="ND - North Dakota"> ND &dash; North Dakota </option>
+        <option value="OH - Ohio"> OH &dash; Ohio </option>
+        <option value="OK - Oklahoma"> OK &dash; Oklahoma </option>
+        <option value="OR - Oregon"> OR &dash; Oregon </option>
+        <option value="PA - Pennsylvania"> PA &dash; Pennsylvania </option>
+        <option value="RI - Rhode Island"> RI &dash; Rhode Island </option>
+        <option value="SC - South Carolina"> SC &dash; South Carolina </option>
+        <option value="SD - South Dakota"> SD &dash; South Dakota </option>
+        <option value="TN - Tennessee"> TN &dash; Tennessee </option>
+        <option value="TX - Texas"> TX &dash; Texas </option>
+        <option value="UT - Utah"> UT &dash; Utah </option>
+        <option value="VT - Vermont"> VT &dash; Vermont </option>
+        <option value="VA - Virginia"> VA &dash; Virginia </option>
+        <option value="WA - Washington"> WA &dash; Washington </option>
+        <option value="WV - West Virginia"> WV &dash; West Virginia </option>
+        <option value="WI - Wisconsin"> WI &dash; Wisconsin </option>
+        <option value="WY - Wyoming"> WY &dash; Wyoming </option>
+        </datalist>
+	
+	
+	
+		 <label for="address--zip-code">Zip Code</label><input type="tel" name="address--zip-code" class="input__field" id="address--zip-code" required >
+			<!--it's not a tel, but it's the only way I know how to bring up the number's keyboard in mobile. Autcomplete, despite type tel, does suggest a zip code-->
+	
+	
+	 <label for="email">Email Address</label><input type="email" name="email" class="input__field" id="email" required>
+	<p class="small-font input__explanation-message">We will email you important information about your application and account.</p>
+	
+	
+	 <label for="phone">Primary Phone Number</label><input type="tel" name="phone" class="input__field" id="phone" required>
+
+	
+</section>
+	
+
+
+<hr />
+		
+			<!--start of financial information section-->
+
+<section class="section__container">
+
+	<h2 class="section__heading">Financial Information</h2>
+	
+	 <label for="employment-status">Employment Status</label>
+		
+		<select name="employment-status" class="input__field" id="employment-status" required>
+			<option disabled selected value="">&dash;&dash;&ensp;Select One&ensp;&dash;&dash;</option>
+		<option>Employed</option>
+		<option>Self-Employed</option>
+		<option>Retired</option>
+		<option>Student</option>
+		<option>Unemployed</option>
+		
+		</select>
+		
+	
+	
+		 
+			<label for="annual-income">Total Annual Income</label><input type="tel" name="annual-income"  class="input__field" id="annual-income" required autocomplete="off">
+				<!--it's not a tel, but it's the only way I know how to bring up the number's keyboard in mobile. I turned off autocomplete to avoid telephone number suggestions or income-->
+	
+	
+	 
+			<label for="monthly-rent">Monthly Rent&sol;Mortgage</label><input type="tel" name="monthly-rent" class="input__field" id="monthly-rent" required autocomplete="off">
+	
+			<!--it's not a tel, but it's the only way I know how to bring up the number's keyboard in mobile. I turned off autocomplete to avoid telephone number and income suggestions-->
+	
+		 
+		
+		<label for="bank-account-type">Bank Account</label>
+		
+		<select name="bank-account-type" class="input__field" id="bank-account-type" required>
+		<option disabled selected value="">&dash;&dash;&ensp;Select One&ensp;&dash;&dash;</option>
+		<option>Checking and Savings</option>
+		<option>Checking Only</option>
+		<option>Savings Only</option>
+		<option>No Bank Account</option>
+		
+		
+		</select>
+			
+			
+<input type="submit" value="Submit Application">
+	
+	
+</section>
+	
+		
+	
+	
+	</form>
+	
+	
+	
+	</main>
+
+	
+	
+</body>
+</html>
